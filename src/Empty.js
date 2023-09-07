@@ -1,7 +1,9 @@
-function Cell() {
-    return '<td class=\"cell\">'
-    + ' '
-    + '</td>'
+function Empty() {
+    return(
+        <td className="cell-bot">
+            <div className="obj-bot"></div>
+        </td>
+    )
 }
 
-export default Cell
+export default Empty

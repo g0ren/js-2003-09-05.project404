@@ -6,3 +6,33 @@ p{
     background: teal;
     color: darkred;
 }
+
+.road{
+    background: white;
+    border: none;
+    width: fit-content;
+}
+
+.cell-bot{
+    width: 100px;
+    height: 200px;
+    vertical-align: bottom;
+}
+
+.cell-top{
+    width: 100px;
+    height: 200px;
+    vertical-align: top;
+}
+
+.obj-bot{
+    height: 100px;
+    width: 100px;
+    vertical-align: bottom;
+}
+
+.obj-top{
+    height: 100px;
+    width: 100px;
+    vertical-align: top;
+}

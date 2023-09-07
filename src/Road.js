@@ -1,17 +1,29 @@
-function Project404()
+import Cell from "./Cell";
+import Player from "./Player";
+import {useState} from "react";
+import RoadGenerator from "./RoadGenerator";
+
+function Road({RoadContent})
 {
-    let road='';
-    road += '<table class=\"road\">' +
-        '<tr>'
-    for (let i = 0; i < 10; i++) {
-        road += '<td class=\"cell\">'
-        road += Math.random() >= 0.5 ?
-            '<img src=\"/img/cactus.png\">' :
-            ' '
-        road += '</td>'
-    }
-    road += '</tr>' +
-        '</table>'
-    return road
+    const [roadContent, setRoadContent] = useState(RoadContent);
+    const [road, setRoad] = useState(roadContent.content);
+    setTimeout(() => {
+        setRoadContent(roadContent.move);
+        setRoad(roadContent.content)
+    }, 1000)
+
+    console.log(`roadContent=${roadContent}`)
+    return [
+        <p>{road}</p>,
+        <table className="road">
+            <tbody>
+            <tr>
+                <Player></Player>
+                <RoadGenerator codeArray={road}></RoadGenerator>
+            </tr>
+            </tbody>
+        </table>
+    ]
 }
-export default Project404
+export default Road
+
